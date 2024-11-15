@@ -1,4 +1,3 @@
-import ReactHtmlParser from "react-html-parser";
 import { BsChevronRight, BsCodeSquare, BsFileEarmarkText, BsX } from "react-icons/bs";
 import { useOverlayContext } from "../context/overlay";
 import { AiFillRightCircle } from "react-icons/ai";
@@ -43,7 +42,6 @@ export default function ViewDetails({ article, show }) {
             ))}
           </div>
           {/* <b>Project gallery:</b> */}
-          {/* <div> {ReactHtmlParser(article.story)}</div> */}
         </div>
       </div>
     </div>
