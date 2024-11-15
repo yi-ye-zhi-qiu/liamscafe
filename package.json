@@ -16,12 +16,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev -H 0.0.0.0"
+    "dev": "next dev -H 0.0.0.0",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "keywords": [],
-  "author": "",
+  "author": "Liam Isaacs",
   "license": "ISC",
-  "description": "",
+  "description": "Liam Isaacs' personal website", 
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "css": "^3.0.0",
