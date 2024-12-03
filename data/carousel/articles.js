@@ -34,7 +34,7 @@ export const articleData = [
     bullets: [
       'Founded and led “Data Acquisition” team as principal/lead engineer (3 engineers)',
       'Sole person responsible for 98% uptime over 4 years of ETL pipeline mining more than 1B+ web signals per day from APIs, 40 million requests per day',
-      'Independently wrote 36 reliable (2-3 years of use) and fast (50,000+ pages/min) containerized web crawlers in Python Scrapy capable of bypassing bot detection and “broad crawls” (one crawler for 10,000+ domains)',
+      'Independently wrote reliable (2-3 years of use) and fast (50,000+ pages/min) containerized web crawlers in Python Scrapy capable of bypassing bot detection and “broad crawls” (one crawler for 10,000+ domains)',
       'Architected serverless web crawler infrastructure on AWS in an IaC (modularized, remote state Terraform) dev/stage/prod SDLC environment on Github, 1-3 minute deployments per crawler',
       'Founded and co-led “Data Processing” team (7 engineers)',
       'Designed ETL framework in AWS Glue using Pyspark and SQL using Athena (S3 storage/data warehousing) to pre- and post-process data intelligently and quickly, compressing size by 95%+',
@@ -56,10 +56,9 @@ export const articleData = [
       <a className="" href="https://github.com/yi-ye-zhi-qiu/liamscafe"> <BsCodeSquare className="inline-block" /> Source code </a>,
     ],
     bullets: [
-      "Engineered mobile- and desktop-friendly portfolio website in React.js library to provide a dynamic and seamless user interface",
-      "Leveraged Next.js framework for server-side rendering and routing, resulting in optimized page load times and SEO",
-      "Implemented Tailwind.css for efficient, responsive styling, ensuring a consistent aesthetic across devices",
-      "Crafted 3-D, expressive elements in Blender and react-three-fiber, a Three.js renderer, to foster user interactivity",
+      "Engineered mobile- and desktop-friendly portfolio website in React using Next.js framework",
+      "Implemented Tailwind.css for responsive styling",
+      "Crafted 3-D models in Blender integrated with react-three-fiber, a Three.js renderer, to foster user interactivity",
       "Designed a portfolio website that showcases professional skills, contributing to a compelling personal brand and online presence",
     ],
   },
