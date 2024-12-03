@@ -35,7 +35,7 @@ export const articleData = [
       'Founded and led “Data Acquisition” team as principal/lead engineer (3 engineers)',
       'Sole person responsible for 98% uptime over 4 years of ETL pipeline mining more than 1B+ web signals per day from APIs, 40 million requests per day',
       'Independently wrote 36 reliable (2-3 years of use) and fast (50,000+ pages/min) containerized web crawlers in Python Scrapy capable of bypassing bot detection and “broad crawls” (one crawler for 10,000+ domains)',
-      'Architected serverless web crawler infrastructure on AWS in an IaC (modularized Terraform) dev/stage/prod SDLC environment on Github, 1-3 minute deployments per crawler (ECR, ECS cluster, ECS fargate, StepFunction, VPC, EventBridge, S3)',
+      'Architected serverless web crawler infrastructure on AWS in an IaC (modularized, remote state Terraform) dev/stage/prod SDLC environment on Github, 1-3 minute deployments per crawler',
       'Founded and co-led “Data Processing” team (7 engineers)',
       'Designed ETL framework in AWS Glue using Pyspark and SQL using Athena (S3 storage/data warehousing) to pre- and post-process data intelligently and quickly, compressing size by 95%+',
       'Wrote custom machine learning algorithm (iterative KMeans) to save 80%+ on scrape volume, reducing operational risk while maintaining informational value',
