@@ -25,14 +25,6 @@ export default function Page() {
           setOverlayIndex(-1);
         }}
       />
-      {/* Toggle-able article overlay articles (carousel) */}
-      {articleData.map((obj, index) => (
-        <ViewDetails
-          key={obj.id}
-          article={obj}
-          show={overlayIndex === obj.overlayIndex}
-        />
-      ))}
       <div className="outline bg-white pt-14 md:p-20 outline-[#5C4033] w-full sm: w-1/2 md:w-3/4 xl:w-1/2 max-w-full m-auto">
         {/* Hero section */}
         <h1
@@ -43,6 +35,7 @@ export default function Page() {
           <img
             src="/svg/logo.svg"
             className="m-auto h-[129px] w-[390px] md:mt-0"
+            alt="Liam's Cafe"
           />
         </h1>
         <Hero />
@@ -52,9 +45,17 @@ export default function Page() {
           className="bg-[#5C4033] mt-0 lg:mt-[-60px] text-center font-bold text-2xl "
         >
           {/* Pâtisserie */}
-          <img src="/svg/patissiere.svg" className="m-auto h-[129px] w-[250px] md:mt-8" />
+          <img src="/svg/patissiere.svg" className="m-auto h-[129px] w-[250px] md:mt-8" alt="Portfolio" />
         </h1>
+        {articleData.map((obj, index) => (
+          <ViewDetails
+            key={obj.id}
+            article={obj}
+            show={overlayIndex === obj.overlayIndex}
+          />
+        ))}
         <div className="relative sm:mt-64">
+          {/* Toggle-able article overlay articles (carousel) */}
           <Carousel />
         </div>
         {/* Checkout */}

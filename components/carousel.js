@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { articleData } from "../data/carousel/articles";
 import { BsArrowLeft, BsArrowRight, BsChevronRight } from "react-icons/bs";
 import AddToCart from "./addToCart";
@@ -10,6 +10,7 @@ const Carousel = ({ ...props }) => {
   const [overlayIndex, setOverlayIndex] = useOverlayContext();
   const [data, setData] = useState(articleData);
   const [pos, setPos] = useState(0);
+  const divRef = useRef(null)
   const goTo = (here) => {
     /* Shuffles slides to go to a specific index
      *  @param here: int index
@@ -19,8 +20,15 @@ const Carousel = ({ ...props }) => {
     setData([...data.slice(n), ...data.slice(0, n)]);
     setPos(here);
   };
-  const scrollToTop = () => {
-    window.scrollTo(0, 0);
+  const executeScroll = () => {
+    if (window.innerWidth < 680) {
+      // Scroll to the top of the page (where article detail is located)
+      // on mobile devices only.
+      window.scrollTo(0, 0)
+    } else {
+      // Otherwise, just scroll back to that product of the carousel.
+      divRef.current.scrollIntoView({ behavior: "smooth" })
+    }
   };
   // Auto-rotates items in carousel.
   // Only applies for non-small screen.
@@ -42,38 +50,39 @@ const Carousel = ({ ...props }) => {
       <div
         {...props}
         className="flex justify-center items-center w-full flex-col gap-y-10 sm:gap-y-0"
+        ref={divRef}
       >
         {/* Carousel items */}
         {data.map((obj, index) => (
           <div
+            // This id field will return the user to this div upon clicking out
+            // on mobile devices
+            id={`carousel-${obj.id}`}
             key={obj.id}
+            // ref={divRef}
             className={`
               flex
               flex-col
-              //bg-[#fff0db4d]
               relative
               p-10
               gap-y-10
               max-w-fit
               hover:cursor-pointer
               animate-slideDown
-              border
-              border-[#5C4033]
+              border-hidden
               first:mt-10
-              sm:border-none                            
               sm:p-10
               sm:absolute
               sm:bg-transparent
               sm:backdrop-blur-lg
-              sm:flex-row-reverse
+              sm:flex-row
               sm:gap-y-10
             `}
             // Event trigger to blur background and show article on click.
-            // Article is absolute position, so we scroll to top of the page.
-            // That's a little uncomfortable when the user clicks out of
-            // the article (they have to scroll back down), but that's OK.
+            // On mobile, this scrolls to the top. On anything else,
+            // this scrolls back to the current article.
             onClick={() => {
-              setOverlayIndex(obj.overlayIndex) & scrollToTop();
+              setOverlayIndex(obj.overlayIndex) & executeScroll();
             }}
           >
             <div className="flex justify-center items-center sm:p-4">
