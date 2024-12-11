@@ -41,6 +41,7 @@ export default function Render({ color }) {
         maxPolarAngle={Math.PI - Math.PI / 6}
         enableZoom={false}
         enablePan={false}
+        enableRotate={false}
       />
       <ContactShadows
         position={[0, -0.8, 0]}
