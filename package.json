@@ -2,7 +2,7 @@
   "dependencies": {
     "@react-three/drei": "^9.79.3",
     "@react-three/fiber": "^8.13.5",
-    "next": "^13.4.12",
+    "next": "^13.5.11",
     "package.json": "^2.0.1",
     "react": "^18.2.0",
     "react-barcode": "^1.4.6",
@@ -23,7 +23,7 @@
   "keywords": [],
   "author": "Liam Isaacs",
   "license": "ISC",
-  "description": "Liam Isaacs' personal website", 
+  "description": "Liam Isaacs' personal website",
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "css": "^3.0.0",
