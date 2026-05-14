@@ -5,4 +5,4 @@ export const products = {
   P000003: { name: "Chocolate Èclair", image: "/svg/eclair.svg" },
   P000004: { name: "Buttery Croissant", image: "/svg/crossaint.svg" },
   P000005: { name: "Strawberry Frasier", image: "/svg/frasier.svg" },
-};
+} as const;
