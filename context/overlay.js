@@ -1,4 +1,4 @@
-  /*
+/*
   What is overlayIndex and why is it set to -1?
   There is an overlay div used to blur background,
   like when the user opens their cart or views a
@@ -30,14 +30,29 @@
   - User clicks on carousel item
   */
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const Context = createContext();
 
 export function OverlayProvider({ children }) {
   const [overlayIndex, setOverlayIndex] = useState(-1);
+
+  // hide overflow of body if overlay active
+  // ui effect is that the y position "freezes"
+  useEffect(() => {
+    switch (overlayIndex) {
+      case -1:
+        document.body.style.overflow = "";
+        break;
+      default:
+        document.body.style.overflow = "hidden";
+    }
+  }, [overlayIndex]);
+
   return (
-    <Context.Provider value={[overlayIndex, setOverlayIndex]}>{children}</Context.Provider>
+    <Context.Provider value={[overlayIndex, setOverlayIndex]}>
+      {children}
+    </Context.Provider>
   );
 }
 
